@@ -1,0 +1,33 @@
+# TASKS
+
+- [x] JS runs on the browser, use the console to practice
+- [ ] Variables
+  - [x] String, Number, Boolean, Null, Undefined, Object, Symbol
+  - [x] function
+- [x] If Statements
+  - [x] Switch
+- [x] For Loops
+- [ ] Arrays
+  - [x] Index 0. Access items in the array
+  - [x] Console log arrays and see all the tools in the tool belt
+  - [x] Demo some of the tools... play and try them out
+- [x] Functions
+  - [x] Create - Run
+  - [x] Parameters(create) - Arguments(run)
+  - [ ] TL;DR arrow functions
+- [x] Scope
+  - [ ] var - let - const
+- [x] Objects
+  - [ ] maybe constructor??
+  - [ ] Object - This
+- [x] Algorithms
+  - [ ] Arithmetic (add, subtract, multiply, divide)
+  - [ ] Odd or even
+  - [ ] log numbers (print numbers from 1 to n)
+- [ ] Challenge - sort of
+  - [ ] Get random numbers
+  - [ ] Alert!
+  - [ ] HTML validation
+  - [ ] JS validation
+  - [ ] Working with strings
+  - [ ] String to arrays

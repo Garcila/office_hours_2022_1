@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Moment JS Exercises</title>
+	</head>
+
+	<body style="background-color: rgb(94, 161, 157)">
+		<h1 style="font-size: 4rem; text-align: center">⏰⏱⏳⌚️🕰</h1>
+		<h2 style="font-size: 4rem; text-align: center; color: #fff">Moment JS</h2>
+
+		<script src="https://code.jquery.com/jquery.js"></script>
+
+		<!-- Import Moment.js here -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+			integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script>
+			var randomDate = "02/23/1999";
+			// Convert the `randomDate` to the "MM/DD/YYYY" format using `moment()`
+			//
+			// Log `convertedDate` into the console
+			//
+			var convertedDate = moment(randomDate, "MM/DD/YYYY");
+			console.log(convertedDate);
+			console.log("----------------------------------------");
+
+			// Convert `convertedDate` into three other date formats of your choice using `.format()`
+			// Log them into the console
+			//
+			console.log(convertedDate.format("M"));
+			console.log(convertedDate.format("dddd"));
+			console.log(convertedDate.format("M/d/y"));
+			console.log("----------------------------------------");
+
+			// Calculate the time in years, months, days between today and the `convertedDate` using `.toNow()` and `.diff()`
+			// Log them into the console
+			//
+
+			var toToday = convertedDate.toNow("meow");
+			console.log(convertedDate.diff(moment(), "days"));
+			console.log(convertedDate.diff(moment(), "months"));
+			console.log(convertedDate.diff(moment(), "years"));
+			console.log(toToday);
+			console.log("----------------------------------------");
+
+			// Calculate the number of days between the `convertedDate` and 02/14/2001
+			// Log it into the console. .diff();
+			//
+			var newDate = moment("02/14/2001", "MM/DD/YYYY");
+			console.log(convertedDate.diff(newDate, "days"));
+			console.log("----------------------------------------");
+
+			// Determine what day of the week and what week of the year the `convertedDate` falls on
+			// Log them into the console 'Wo'
+			//
+			console.log(convertedDate.format("Wo"));
+		</script>
+	</body>
+</html>

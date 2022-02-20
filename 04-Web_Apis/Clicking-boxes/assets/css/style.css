@@ -1,0 +1,30 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	background-color: #ff6fbc;
+	color: #ffffff;
+	font-size: 2rem;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 5rem;
+	min-width: 5rem;
+	border: 1px solid #c0c0c0;
+	background-color: #00ffff;
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 5px;
+	font-size: 4rem;
+	cursor: pointer;
+}

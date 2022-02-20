@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css"
+		/>
+		<title>Nasa Pictures</title>
+	</head>
+	<body>
+		<h1>NASA IMAGES</h1>
+		<p>Lorem ipsum dolor sit.</p>
+		<input type="text" id="image-to-get" />
+		<button id="button-to-get-image">Get the Image</button>
+		<div class="gallery"></div>
+
+		<script>
+			var input = document.getElementById("image-to-get");
+			var button = document.getElementById("button-to-get-image");
+			var gallery = document.querySelector(".gallery");
+
+			button.addEventListener("click", function (event) {
+				event.preventDefault;
+				var whateverIWant = input.value;
+
+				var url = "https://images-api.nasa.gov/search?q=" + whateverIWant;
+
+				fetch(url)
+					.then(function (thisIsTheInformationIGotFromNasa) {
+						return thisIsTheInformationIGotFromNasa.json();
+					})
+					.then(function (data) {
+						var images = data.collection.items;
+						console.log(images);
+						for (let i = 0; i < images.length; i++) {
+							var img = document.createElement("img");
+							img.src = images[i].links[0].href;
+
+							gallery.appendChild(img);
+						}
+					});
+			});
+		</script>
+	</body>
+</html>

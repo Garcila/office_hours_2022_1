@@ -1,0 +1,25 @@
+{
+	"name": "module-testrpg",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Garcila/module-testrpg.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Garcila/module-testrpg/issues"
+	},
+	"homepage": "https://github.com/Garcila/module-testrpg#readme",
+	"devDependencies": {
+		"jest": "^27.5.1"
+	},
+	"dependencies": {
+		"inquirer": "^8.2.0"
+	}
+}

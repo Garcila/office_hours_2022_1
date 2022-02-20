@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css"
+    />
+    <title>Document</title>
+    <style>
+      :root[color-mode='dark'] {
+        --primary: #d282a6;
+        --primary-dark: #6e4555;
+        --background: #3a3238;
+        --text: #f5e3e0;
+      }
+      :root[color-mode='light'] {
+        --primary: #d282a6;
+        --primary-dark: #6e4555;
+        --background: #f5e3e0;
+        --text: #3a3238;
+      }
+      body {
+        color: var(--text);
+        background-color: var(--background);
+      }
+      input[type='submit'],
+      button[type='submit'],
+      button:not([disabled]) {
+        background: var(--primary);
+        color: var(--primary-dark);
+      }
+      input[type='submit']:hover,
+      button[type='submit']:hover,
+      button:not([disabled]):hover {
+        background: var(--primary-dark);
+        color: var(--primary);
+      }
+
+      dd + dt {
+        border-top: 1px solid var(--primary);
+      }
+
+      blockquote {
+        border-left: 1px solid var(--primary);
+      }
+
+      mark {
+        background: var(--primary);
+      }
+
+      a {
+        color: var(--primary);
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+      }
+      #images {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      figure {
+        max-width: 20vw;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <button id="color-change" class="button">color change</button>
+        <div class="p">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eligendi
+          atque
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex nobis corporis</p>
+        <form>
+          <label>I want to see</label>
+          <input type="text" size="10" placeholder="👀 i.e. Jupiter" />
+          <button type="submit" id="form-button" class="button">Search</button>
+        </form>
+      </article>
+      <article id="images"></article>
+    </main>
+    <script>
+      let localColourMode;
+
+      const buttonColor = document.querySelector('#color-change');
+      const html = document.querySelector('html');
+
+      function setAttrAndSaveToLocalStorage(mode) {
+        html.setAttribute('color-mode', mode);
+        localStorage.setItem('color-mode', mode);
+      }
+
+      function getLocalStorageColorMode() {
+        const localColourMode = localStorage.getItem('color-mode') || 'dark';
+        html.setAttribute('color-mode', localColourMode);
+      }
+
+      getLocalStorageColorMode();
+
+      buttonColor.addEventListener('click', function () {
+        let currentMode = html.getAttribute('color-mode');
+        if (currentMode === 'dark') {
+          setAttrAndSaveToLocalStorage('light');
+        } else {
+          setAttrAndSaveToLocalStorage('dark');
+        }
+      });
+
+      function createCards(data) {
+        const arrayOfImages = data.collection.items;
+        const setOfImages = document.querySelector('#images');
+
+        setOfImages.textContent = '';
+
+        for (let i = 0; i < arrayOfImages.length; i++) {
+          const thumbnail = arrayOfImages[i].links[0].href;
+          const figure = document.createElement('figure');
+          const img = document.createElement('img');
+          const figcaption = document.createElement('figcaption');
+
+          img.src = thumbnail;
+          figcaption.textContent = arrayOfImages[i].data[0].title;
+
+          figure.appendChild(img);
+          figure.appendChild(figcaption);
+          setOfImages.appendChild(figure);
+        }
+      }
+      function getImages(query) {
+        const url = `https://images-api.nasa.gov/search?q=${query}&media_type=image`;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            createCards(data);
+          });
+      }
+
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let query = document.querySelector('input').value;
+        getImages(query);
+      });
+    </script>
+  </body>
+</html>
