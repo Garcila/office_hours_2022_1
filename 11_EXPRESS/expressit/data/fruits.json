@@ -1,0 +1,104 @@
+{
+  "fruits": [
+    {
+      "name": "green apple",
+      "image": "🍏",
+      "id": 1
+    },
+    {
+      "name": "red apple",
+      "image": "🍎",
+      "id": 2
+    },
+    {
+      "name": "pear",
+      "image": "🍐",
+      "id": 3
+    },
+    {
+      "name": "orange",
+      "image": "🍊",
+      "id": 4
+    },
+    {
+      "name": "lemon",
+      "image": "🍋",
+      "id": 5
+    },
+    {
+      "name": "banana",
+      "image": "🍌",
+      "id": 6
+    },
+    {
+      "name": "watermelon",
+      "image": "🍉",
+      "id": 7
+    },
+    {
+      "name": "grape",
+      "image": "🍇",
+      "id": 8
+    },
+    {
+      "name": "blueberry",
+      "image": "🫐",
+      "id": 9
+    },
+    {
+      "name": "melon",
+      "image": "🍈",
+      "id": 10
+    },
+    {
+      "name": "cherry",
+      "image": "🍒",
+      "id": 11
+    },
+    {
+      "name": "peach",
+      "image": "🍑",
+      "id": 12
+    },
+    {
+      "name": "mango",
+      "image": "🥭",
+      "id": 13
+    },
+    {
+      "name": "pinapple",
+      "image": "🍍",
+      "id": 14
+    },
+    {
+      "name": "coconut",
+      "image": "🥥",
+      "id": 15
+    },
+    {
+      "name": "kiwi",
+      "image": "🥝",
+      "id": 16
+    },
+    {
+      "name": "tomato",
+      "image": "🍅",
+      "id": 20
+    },
+    {
+      "name": "tomato",
+      "image": "🍅",
+      "id": 20
+    },
+    {
+      "name": "tomato",
+      "image": "🍅",
+      "id": 20
+    },
+    {
+      "name": "a",
+      "image": "🍅",
+      "id": 20
+    }
+  ]
+}

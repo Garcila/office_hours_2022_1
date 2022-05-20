@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>Hello React!</title>
+
+		<!-- core React -->
+		<script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+		<!-- React to manipulate the DOM -->
+		<script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+		<!-- Babel to use ES6 in all browsers -->
+		<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+	</head>
+
+	<body>
+		<div id="root"></div>
+
+		<script type="text/babel">
+			const container = document.getElementById("root");
+			// React.createElement(html element, options (such as class...), children)
+			const header = React.createElement(
+				"h1",
+				{ id: "H", children: "somethig" },
+				"HHHello World!"
+			);
+			ReactDOM.render(header, container);
+		</script>
+	</body>
+</html>

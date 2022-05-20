@@ -1,0 +1,13 @@
+{{> header}}
+<h1>Example App: Home</h1>
+
+<h2>Hello from all the fruits</h2>
+
+<ul>
+	{{#each fruits as |fruit|}}
+		<li><h2>EN: {{fruit.name}}</h2></li>
+		<li><h2>ES: {{fruit.nombre}}</h2></li>
+	{{/each}}
+</ul>
+
+{{> footer}}

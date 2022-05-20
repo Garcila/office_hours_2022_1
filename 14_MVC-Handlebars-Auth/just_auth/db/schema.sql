@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS just_auth;
+
+CREATE DATABASE just_auth;

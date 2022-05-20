@@ -1,0 +1,73 @@
+# NO SQL
+
+## Mongo DB - All Mongoose all the time
+
+### Module Steps
+
+- Set provided code
+- npm install mongoose
+- Add models folder
+  - Add Pizza.js
+    - require Schema and model
+    - Set up schema
+    - create the model and export it
+  - Add index.js
+    - require Pizza.js
+    - Export it
+- In Server.js
+  - require mongoose
+  - before listen
+    - add connection
+- Add controllers folder
+  - add pizza-controller.js
+    - require Pizza model
+    - create pizzaController
+      - add crud methods
+    - export pizzaControler
+- Add api folder in routes
+  - add pizza-routes.js
+    - require express Router
+    - setup routes
+    - embrace the alternative format
+  - add index.js to api
+  - add api into index.js in controller
+- add-pizza.js file in public
+  - study the file
+  - complete the handlePizzaSubmit by adding the post request
+- END OF FIRST PART. NEXT COMMENTS
+- Add Comment.js to models folder
+  - create model following pizzas structure
+  - > In Sequelize to connect two tables with Sequelize, you'd have to store a reference of the parent data's id with the child data. Mongoose does it the other way around, The parent keeps track of its childern
+  - add a comments field in the Pizza model to create the connection
+  - Use Mongoose **virtuals** (computed values) to count comments
+    > Virtuals allow you to add virtual properties to a document that aren't stored in the database. They're normally computed values that get evaluated when you try to access their properties.
+- require and export the Comments model from the index.js file
+- Add a comment-controller in the controllers folder
+  - require Pizza and Comment model as Comments needs both
+  - Add crud methods (add and delete)
+    - create
+      - use body in the req to create a comment
+      - after created deconstruct the \_id from the returned data
+      - use that \_id to findAndUpdate the Pizza
+        - update by pushing
+        - To see the comment and not just the id, we **populate**
+      - > The **v field is called the version key. It describes the internal revision of a document. This **v field is used to track the revisions of a document. By default, its value is zero.
+      - ignore v field from comments and pizza
+    - delete
+      - use the params (commentId) to findAndDelete
+      - then find the associated Pizza and delete the comment ($pull) from it
+      - populate as done in the create method
+  - Export it
+  - Update index.js
+- Add API calls to the front end
+  - add a fetch call to /api/pizzas to pizza-list.js
+  - call the getPizzaList() function
+  - use getter in Mongoose to modify the createdAt date, using the utils in our app (like a virtual)
+- Work on commenting on comments (discussions)
+  - setup getPizza() on single-pizza.js to set the ground for the discussions
+    - lots of new methods in this function!
+  - add fetch to habndleNewCommentSubmit() in this file
+- Add Reply Schema to the Comment Model
+  - follows the same paterns with virtuals and getters
+- Update comment-controler to add replys
+  - add addReply() method

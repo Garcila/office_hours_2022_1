@@ -1,4 +1,5 @@
-fetch("https://ghibliapi.herokuapp.com/films")
+// fetch("https://ghibliapi.herokuapp.com/films")
+fetch("https://no-cors-for-you.herokuapp.com/ghibliapi.herokuapp.com/films")
 	.then(function (woof) {
 		return woof.json();
 	})

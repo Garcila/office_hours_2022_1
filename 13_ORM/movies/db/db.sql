@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS movies_sat;
+
+CREATE DATABASE movies_sat;
