@@ -4,9 +4,9 @@
 
 - Motivational Site
 
-## [X] Wireframe
+## [] Wireframe
 
-## [X] Structure
+## [] Structure
 
 - Create folders and files
 - Initialize git locally
@@ -14,6 +14,7 @@
 ## [ ] HTML skeleton
 
 - [ ] Div Population of skeleton
+
   - h1
   - h2
   - p
@@ -22,16 +23,16 @@
   - ol and children
   - ul and children
 
-- [X] Semantic containers
+- [] Semantic containers
 
   - Header
   - Section
   - Main
   - Footer
 
-- [X] Push to Github
+- [] Push to Github
 
-## [X] What about comments?
+## [] What about comments?
 
 ## [ ] CSS (External- inline - style)
 
